@@ -1,6 +1,6 @@
 {
   "name": "onverwachts-so",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A surprise pop quiz for developers: after the agent implements something for you, it springs an oral exam on the concepts, terms, and design tradeoffs of the work — so you actually understand what was built and why, and make better decisions next time.",
   "author": {
     "name": "Marnick van der Arend"
