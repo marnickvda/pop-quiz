@@ -23,21 +23,39 @@ After an agent implements something, this skill flips the roles: **the agent spr
 
 ## Workflow
 
-### 1. Determine the scope (what to quiz on)
+### 1. Gather the material — silently, before you ask anything
 
-Figure out what was actually implemented, in this order:
-1. **Current session** — the work you built in this conversation. Prefer this.
-2. **Current git branch** — if session context is thin, inspect the branch's own changes: `git diff <base>...HEAD`, `git log <base>..HEAD --oneline`, and the changed files. (`<base>` is usually `main`/`master` or the branch's fork point.)
+The quiz is only as good as what you pull together first. Work these sources **richest-first**:
 
-Pick the few real **decisions** and **concepts** worth testing. If the scope is large or ambiguous, tell the user in one line what you'll quiz on and let them narrow it. Don't quiz on code you didn't write or touch (unless the user asks).
+**A. This conversation — your richest source.** You built it, so you remember not just *what* shipped but *what you rejected and why*. The diff only shows the code that survived; the alternatives you weighed and the tradeoffs you accepted live only here. Recall, from this session:
+- Each non-trivial decision and the options you compared.
+- Libraries, algorithms, and patterns you chose — **and the ones you considered and dropped**.
+- Anything you called a tradeoff, risk, assumption, or "we could also…".
 
-### 2. Build the question bank (internally — don't show it)
+**B. The git changes — for scope, for exact facts, and for work not in this session.** Use the branch to bound the quiz, to verify specifics (exact values, names, signatures — *memory is for the why, the code is the source of truth for the what*), and to reconstruct when the conversation is thin (fresh session, someone else's branch):
+```bash
+git merge-base HEAD main          # find <base> (try main/master)
+git diff --stat <base>..HEAD      # what changed, and how much
+git log  <base>..HEAD --oneline   # the story, in commit messages
+git diff <base>..HEAD             # the actual change
+```
+Read the changed files where the diff alone doesn't explain the choice. Mine commit messages and any linked PR/issue for stated rationale.
 
-Extract two kinds of material from the scope:
-- **Terms & concepts** (recall): the named techniques, data structures, libraries, protocols, and what they do — e.g. "token bucket", "idempotency key", "optimistic locking".
-- **Decisions & tradeoffs** (reasoning): each design choice you made, the alternatives you rejected, and *why*. These are the high-value questions.
+**C. Rationale already written down.** `why`-comments, ADRs, design docs, TODOs — each is a decision record; turn it into a question.
 
-Aim for ~5–8 questions, **mostly reasoning**. Order them easy → hard.
+If the change set is large, **don't cover all of it** — pick the 3–5 most decision-rich areas.
+
+### 2. Turn it into an answer key — then announce the SO
+
+Before asking anything, draft (silently) one line per decision you'll test:
+
+> **concept/term · the choice made · the alternatives rejected · the tradeoff that decided it · what breaks if it's wrong**
+
+That line *is* your grading key, and it writes the question for you — mostly *"why X over Y"*, not trivia. Aim for ~5–8, ordered easy → hard.
+
+Then announce the SO in one line — name the **topics, not the questions** — and start:
+
+> "📝 Onverwachtse SO over de rate limiter — algoritme, opslag, en gedrag bij uitval. Pen klaar? Vraag 1…"
 
 ### 3. Run the quiz — one question at a time
 
@@ -80,6 +98,7 @@ At least half the questions must be **"why X over Y"** tradeoff questions.
 - Hinting the answer inside the question (yes/no phrasing, handing over options) → make the user produce it.
 - Grading a wrong answer as "kind of right" to be nice → be honest; calibration is the point.
 - Only asking "what is X" recall questions → at least half must be tradeoff questions.
+- Building the quiz from the diff alone → the *why* and the rejected alternatives live in the conversation, not the code. Mine it first.
 - Quizzing on code from outside this session/branch → stay in scope.
 - Quizzing in the wrong language → match the conversation.
 - Revealing the reasoning before the user has attempted the answer → wait for their shot first.
