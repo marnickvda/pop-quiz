@@ -1,0 +1,18 @@
+{
+  "name": "onverwachts-so",
+  "description": "Surprise pop quiz skill: the agent overhoort you on the code it just wrote.",
+  "owner": {
+    "name": "Marnick van der Arend"
+  },
+  "plugins": [
+    {
+      "name": "onverwachts-so",
+      "description": "After the agent implements something for you, it springs a surprise oral exam (onverwachtse SO) on the concepts, terms, and design tradeoffs of the work — so you understand what was built and why.",
+      "version": "0.1.0",
+      "source": "./plugins/onverwachts-so",
+      "author": {
+        "name": "Marnick van der Arend"
+      }
+    }
+  ]
+}
