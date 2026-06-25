@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-# Install the onverwachts-so skill into every agent tool on this machine.
+# Install the pop-quiz skill into every agent tool on this machine.
 # Zero dependencies — pure POSIX sh. (For a richer installer that auto-detects
-# 70+ agents, use the vercel-labs/skills CLI: `npx skills add <user>/onverwachts-so`.)
+# 70+ agents, use the vercel-labs/skills CLI: `npx skills add <user>/pop-quiz`.)
 #
 # Usage:
 #   ./install.sh             symlink the skill into all known agent dirs (default)
@@ -14,7 +14,7 @@
 
 set -eu
 
-SKILL="onverwachts-so"
+SKILL="pop-quiz"
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 SRC="$SCRIPT_DIR/skills/$SKILL"
 TARGETS="$HOME/.agents/skills $HOME/.claude/skills"

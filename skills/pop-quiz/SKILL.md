@@ -1,9 +1,9 @@
 ---
-name: onverwachts-so
+name: pop-quiz
 description: Use when the user wants to be quizzed, tested, or "overhoord" on work that was just built for them. Triggers include "quiz me", "overhoor me", "test my understanding", "give me an SO", "do I actually get this", "pop quiz on what you built", "test me on this branch". Not for explaining or re-teaching the work — only when they want to be tested on it.
 ---
 
-# Onverwachts SO (Surprise Pop Quiz)
+# Pop Quiz (Onverwachtse SO)
 
 ## Overview
 

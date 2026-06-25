@@ -1,4 +1,4 @@
-# onverwachts-so 📝
+# pop-quiz 📝
 
 > Your agent wrote it. You skimmed the diff, mumbled *"yeah, looks good,"* and merged it under your name.
 >
@@ -32,28 +32,28 @@ One `SKILL.md` in the [agentskills.io](https://agentskills.io) standard — thre
 **Any agent, one command** — Claude Code, Cursor, opencode, Codex, Copilot, Gemini & 60+ more, via the [vercel `skills`](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
-npx skills add marnickvda/onverwachts-so
+npx skills add marnickvda/pop-quiz
 ```
 
-**Claude Code plugin** — also gives you the `/onverwachts-so` command:
+**Claude Code plugin** — also gives you the `/pop-quiz` command:
 
 ```
-/plugin marketplace add marnickvda/onverwachts-so
-/plugin install onverwachts-so
+/plugin marketplace add marnickvda/pop-quiz
+/plugin install pop-quiz
 ```
 
 **Manual, no Node** — symlinks into `~/.agents/skills/` (every tool) + `~/.claude/skills/` (Claude Code):
 
 ```bash
-git clone https://github.com/marnickvda/onverwachts-so
-./onverwachts-so/install.sh        # --copy on Windows · --uninstall to remove
+git clone https://github.com/marnickvda/pop-quiz
+./pop-quiz/install.sh        # --copy on Windows · --uninstall to remove
 ```
 
 > Native skill support needs **Cursor ≥ 2.4** or **opencode ≥ 1.16**.
 
 ## Trigger it
 
-- `/onverwachts-so` — or scope it: `/onverwachts-so the caching layer`
+- `/pop-quiz` — or scope it: `/pop-quiz the caching layer`
 - Or just ask: *"quiz me on what you built"* · *"overhoor me"*
 
 ## Why bother
