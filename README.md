@@ -11,7 +11,7 @@
 </p>
 <p align="center"><sub>▶︎ The <em>Rundfunk</em> "Onverwachts" sketch that inspired the name — opens at 0:54.</sub></p>
 
-A portable **Agent Skill** named after the *onverwachtse schriftelijke overhoring* — the surprise test Dutch teachers spring to find out who actually did the reading. It flips the roles: after your agent implements something, it springs that exam on **you** — the concepts, the terms, and above all the **design tradeoffs** behind every choice. Not to humble you; to make sure you *own* the decisions and learn the tradeoffs for next time.
+Building with AI agents, it's easy to skip the hard part — the **trade-offs** behind the design. This portable **Agent Skill** flips the roles: after your agent ships something, it springs a surprise oral exam on **you** — the concepts, the terms, and above all the design decisions behind every choice. Not to humble you; to sharpen your thinking and learn actively from the code your agent wrote.
 
 ## How it works
 
