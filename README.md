@@ -1,35 +1,22 @@
-# pop-quiz 📝
+# pop-quiz
 
-> Your agent wrote it. You skimmed the diff, mumbled *"yeah, looks good,"* and merged it under your name.
->
-> 🔔 **Laptops dicht, pak een blaadje** — *onverwachtse SO.* Let's see if you understood a single line of it.
-
-<p align="center">
-  <a href="https://youtu.be/hFDZdXpgVP8?t=54">
-    <img src="https://img.youtube.com/vi/hFDZdXpgVP8/hqdefault.jpg" alt="The Dutch Rundfunk Onverwachts SO sketch this skill is named after" width="480">
-  </a>
-</p>
-<p align="center"><sub>▶︎ The Dutch <em>Rundfunk</em> "Onverwachts SO" sketch that inspired this skill — opens at 0:54.</sub></p>
-
-Building with AI agents, it's easy to skip the hard part — the **trade-offs** behind the design. This portable **Agent Skill** flips the roles: after your agent ships something, it springs a surprise oral exam on **you** — the concepts, the terms, and above all the design decisions behind every choice. Not to humble you; to sharpen your thinking and learn actively from the code your agent wrote.
+An Agent Skill that quizzes **you** on what your agent just built — mostly *"why X over Y?"* — because you don't own a decision you can't defend against the alternative.
 
 ## How it works
 
-Run it after your agent builds something. It:
+1. **Scopes** to this session's work, a topic you name, or your branch's diff.
+2. **Asks one question at a time**, adapting difficulty — tradeoffs, plus "what if…" and "predict what breaks".
+3. **Grades the answer honestly** (never you), then reveals the rejected alternatives and the deciding tradeoff.
+4. **Ends with a scorecard**: tradeoffs to remember, gaps, strengths.
+5. **Offers to save** takeaways as re-testable notes — only if you say yes.
 
-1. **Scopes itself** to this session's work, a topic you name, or your current branch's diff.
-2. **Asks one question at a time**, adapting to how you do — mostly *"why X over Y?"*, with transfer ("what if…") and "predict what breaks" twists.
-3. **Grades the answer honestly** (never *you*), makes you reach for the reasoning, then reveals the rejected alternatives and the tradeoff that decided it.
-4. **Ends with a scorecard**: what to remember, gaps to revisit, and your strengths.
-5. **Offers to save** the takeaways (only if you say yes) as re-testable notes, so the lessons stick across sessions.
-
-Runs in your chat language — Dutch for an *echte SO*, or anything else.
+Runs in your chat language.
 
 ## Install
 
-One `SKILL.md` in the [agentskills.io](https://agentskills.io) standard — three ways in:
+One `SKILL.md` in the [agentskills.io](https://agentskills.io) standard.
 
-**Any agent, one command** — Claude Code, Cursor, opencode, Codex, Copilot, Gemini & 60+ more, via the [vercel `skills`](https://github.com/vercel-labs/skills) CLI:
+**Any agent** — Claude Code, Cursor, opencode, Codex, Copilot, Gemini & 60+ more, via the [vercel `skills`](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
 npx skills add marnickvda/pop-quiz
@@ -54,13 +41,7 @@ git clone https://github.com/marnickvda/pop-quiz
 ## Trigger it
 
 - `/pop-quiz` — or scope it: `/pop-quiz the caching layer`
-- Or just ask: *"quiz me on what you built"* · *"overhoor me"*
-
-## Why bother
-
-- You don't own a decision you can't defend against the alternative.
-- Half the questions are *"why X over Y"* — where the real engineering judgment lives.
-- Every session turns into a small, deliberate lesson.
+- Or just ask: *"quiz me on what you built"*
 
 ## License
 
